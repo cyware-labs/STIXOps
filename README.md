@@ -69,11 +69,7 @@ This tool also has an option to create a STIX object. To do this enter 3, and ch
 
   
 
-We are constantly on the lookout for newer services/ tools to add to our repo. If you would like to contribute the easiest way to do so would be to open an issue and suggest the tool you would like.
-
-  
-
-You can also pull this repo, add your connector and submit a merge request for adding your code directly in our repo!
+We are constantly on the lookout for newer extensions to add to STIXOps. To contribute you can pull this repo, add your extensions and submit a merge request for adding your code directly in our repo!
 
   
 
