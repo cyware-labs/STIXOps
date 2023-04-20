@@ -11,10 +11,10 @@ stix2-elevator = "^4.1.7"
 stix2-slider = "^4.0.0"
 stix2 = "^3.0.0"
 
+[tool.poetry.scripts]
+stixops = "stixops:main"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.scripts]
-stixops = "stixops:main"
