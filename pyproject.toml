@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "stixops"
+version = "0.1.0"
+description = "A tool to interact with STIX and perform various operations on STIX objects"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+stix2-elevator = "^4.1.7"
+stix2-slider = "^4.0.0"
+stix2 = "^3.0.0"
+
+[tool.poetry.scripts]
+stixops = "stixops:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

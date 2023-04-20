@@ -11,7 +11,7 @@ from stix2elevator import elevate
 from stix2elevator.options import initialize_options
 
 
-class STIXOps (object):
+class STIXOps(object):
 
     def elevatefile(self, filename):
         """
@@ -58,8 +58,10 @@ class STIXOps (object):
         """
         if option == 1:
             name = str (input ("Enter indicator name: "))
+            description = str (input ("Enter description: "))
             pattern = str (input ("Enter pattern: "))
             indicator = indicator = Indicator (name=name,
+                                               description=description,
                                                pattern=pattern,
                                                pattern_type="stix")
             return indicator
@@ -85,11 +87,11 @@ class STIXOps (object):
             name = str (input ("Enter malware name: "))
             family = str (input ("Does the malware have any relations [True/ False]? "))
             description = str (input ("Enter malware description: "))
-            type = str (input ("Enter malware type: "))
+            malware_type = str (input ("Enter malware type: "))
             malware = Malware (name=name,
                                description=description,
                                is_family=family,
-                               malware_types=type)
+                               malware_types=malware_type)
             return malware
 
         elif option == 4:
@@ -105,11 +107,11 @@ class STIXOps (object):
 
         elif option == 5:
             name = str (input ("Enter tool name: "))
-            type = str (input ("Enter tool type: "))
+            tool_type = str (input ("Enter tool type: "))
             description = str (input ("Enter description: "))
             phases = str (input ("Enter tool phases: "))
             tool = Tool (name=name,
-                         tool_types=type,
+                         tool_types=tool_type,
                          description=description)
             return tool
 
@@ -123,11 +125,11 @@ class STIXOps (object):
 
         elif option == 7:
             name = str (input ("Enter report name: "))
-            type = str (input ("Enter report type: "))
+            report_type = str (input ("Enter report type: "))
             description = str (input ("Enter report description: "))
             ref = str (input ("Enter object references: "))
             report = Report (name=name,
-                             report_types=type,
+                             report_types=report_type,
                              description=description,
                              object_refs=ref)
             return report
@@ -150,7 +152,7 @@ class STIXOps (object):
                                            labels=labels)
             return vulnerability
 
-    def main(self):
+    def init_options(self):
         option = int (input (
             "[+] Welcome to STIX ops. Enter task to perform\n [-][1] For "
             "elevating STIX 1 to STIX 2\n [-][2] For validating a STIX json file\n [-][3] For creating a STIX object "
@@ -169,6 +171,9 @@ class STIXOps (object):
             result = self.writeSTIX (option)
             print (result)
 
+def main():
+    stixops = STIXOps()
+    stixops.init_options()
 
-x = STIXOps ()
-x.main ()
+if __name__ == "__main__":
+    main()
