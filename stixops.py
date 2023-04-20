@@ -58,8 +58,10 @@ class STIXOps(object):
         """
         if option == 1:
             name = str (input ("Enter indicator name: "))
+            description = str (input ("Enter description: "))
             pattern = str (input ("Enter pattern: "))
             indicator = indicator = Indicator (name=name,
+                                               description=description,
                                                pattern=pattern,
                                                pattern_type="stix")
             return indicator
