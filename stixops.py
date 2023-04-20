@@ -11,7 +11,7 @@ from stix2elevator import elevate
 from stix2elevator.options import initialize_options
 
 
-class STIXOps (object):
+class STIXOps(object):
 
     def elevatefile(self, filename):
         """
